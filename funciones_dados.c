@@ -3,22 +3,10 @@
 #include<stdlib.h>
 
 int azar(int minimo, int maximo) {
-    // Generar numeros aleatorios en el rango [minimo, maximo]
-
-    int r;
-
-    do {
-        //srand(time(NULL));
-        r = 1 + rand() % maximo;  // [1, maximo]
-        //printf("\tr=%d\n", r);
-    } while(r < minimo);
-
-    return r;  // [minimo, maximo]
+    return minimo + rand() % (maximo - minimo + 1);
 }
 
 int dado() {
-
-    //srand(time(NULL));
     return azar(1, 6);
 }
 
