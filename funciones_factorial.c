@@ -16,6 +16,9 @@
     16! = 2,004,189,184 <-- erroneo
     17! = 4,006,445,056
 
+    int -> 4 bytes
+    long -> 8 bytes (otros) : 4 bytes (c)
+    long long -> 8 bytes
 */
 
 
@@ -30,9 +33,11 @@ int main() {
 }
 
 long long factorial(int n) {
+    // caso base: detener la recursion
     if (n == 1) {
         return 1;
     }
 
+    // caso recursivo
     return n * factorial(n-1);
 }
