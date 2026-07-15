@@ -3,11 +3,16 @@
 int main() {
     char frase[] = "Hola";
 
-    char *p = frase;
+    //char *p = frase;
 
-    putchar(*(p+3));
-    putchar('\n');
+    //putchar(*(p+3));
+    //putchar('\n');
 
-    printf(frase);
+    puts(frase);
+    printf("%c\n", frase[1]);
+
+    frase[2] = 'L';
+    puts(frase);
+
     return 0;
 }

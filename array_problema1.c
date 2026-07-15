@@ -14,7 +14,7 @@ promedio = sumatoria de los elementos / cantidad de elementos
 double promedio(const int []);
 
 int main() {
-    int datos[ELEMENTOS] = {11, 20, 30, 40, 50};
+    int datos[ELEMENTOS] = {11, 20, 30, 40, 50};  // 30.2
 
     printf("El promedio es %f", promedio(datos));
     return 0;
