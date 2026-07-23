@@ -2,23 +2,35 @@
 #include <stdlib.h>
 #include <errno.h>
 
+
+int entero_valido(char*, int*);
+
 int main(int c, char *a[]) {
     int n1 = atoi(a[1]);
     printf("atoi... %d\n", n1);
 
-    errno = 0;
-    char *fin;
-    long n2 = strtol(a[1], &fin, 10);
+    int err;
+    int n2 = entero_valido(a[1], &err);
 
-    
-    if (errno != 0) {
-        printf("Hubo un error: %u\n", errno);
-    } else if (fin == a[1] || *fin != '\0') {
-        printf("strtol: '%s' no es un numero valido\n", a[1]);
-        printf("fin: '%s'\n", fin);
-        printf("**fin: '%c'\n", *fin);
+    if (err) {
+        puts("No se pudo obtener un valor con strtol");
     } else {
-        printf("strtol... %ld\n", n2);
+        printf("strtol... %d\n", n2);
     }
     return 0;
+}
+
+
+int entero_valido(char *cad, int *error){
+    errno = 0;
+    char *finPtr;
+    int n = strtol(cad, &finPtr, 10);
+
+    if (errno != 0 || finPtr == cad || *finPtr != '\0') {
+        *error = 1;
+    } else {
+        *error = 0;
+    }
+
+    return n;
 }

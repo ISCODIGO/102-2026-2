@@ -1,15 +1,22 @@
+/*
+
+calculadora.exe + 10 20
+
+puntero[0] -> nombre-del-programa
+puntero[1] -> "+"
+puntero[2] -> "10"
+puntero[3] -> "20"
+
+*/
+
+
 #include <stdio.h>
 #include <stdlib.h>
-
-// calculadora.exe + 1 2
+#include <math.h>
 
 int main(int c, char *args[])
 {
-    //printf("El programa es: %s\n", args[0]);
-    //printf("El primer argumento extra es: %s\n", args[1]);
-    //printf("El segundo argumento extra es: %s\n", args[2]);
-
-    if (c >= 2) {
+    if (c >= 4) {
         char operador = args[1][0];
         float n1 = atof(args[2]);
         float n2 = atof(args[3]);
@@ -24,8 +31,17 @@ int main(int c, char *args[])
             case '-':
                 resultado = n1 - n2;
                 break;
+            case '*':
+                resultado = n1 * n2;
+                break;
             case '/':
                 resultado = n1 / n2;
+                break;
+            case '%':
+                resultado = (int)n1 % (int)n2;
+                break;
+            case '^':
+                resultado = pow(n1, n2);
                 break;
             default:
                 puts("** Operacion no valida **");
