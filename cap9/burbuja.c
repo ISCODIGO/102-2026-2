@@ -6,7 +6,6 @@
 #define randomize() srand((unsigned) time(NULL))
 #define random(num) (rand() % (num))
 
-
 void ordenamiento_burbuja(int []);
 
 int main() {
